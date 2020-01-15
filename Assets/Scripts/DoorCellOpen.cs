@@ -11,8 +11,7 @@ public class DoorCellOpen : MonoBehaviour
     public GameObject ActionText;
     public GameObject TheDoor;
     public AudioSource CreakSound;
-
-
+    public GameObject ExtraCross;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +20,8 @@ public class DoorCellOpen : MonoBehaviour
     }
 
     void OnMouseOver(){
-        if(TheDistance <= 3){
+        if(TheDistance <= 2){
+            ExtraCross.SetActive(true);
             ActionDisplay.SetActive(true);
             ActionText.SetActive(true);
         }
@@ -38,8 +38,9 @@ public class DoorCellOpen : MonoBehaviour
     }
 
     void OnMouseExit(){
-         ActionDisplay.SetActive(false);
-                ActionText.SetActive(false);
+        ActionDisplay.SetActive(false);
+        ActionText.SetActive(false);
+        ExtraCross.SetActive(false);
     }
 
 
